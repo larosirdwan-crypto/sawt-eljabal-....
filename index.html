@@ -1,0 +1,1067 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#173f35">
+<meta name="description" content="صوت الجبل: فضاء شبابي للحوار والتفاعل والتعبير عن قضايا الجبال والمناطق القروية.">
+<title>صوت الجبل | فضاء الحوار والمشاركة</title>
+
+<style>
+:root {
+  --green: #173f35;
+  --green2: #245849;
+  --gold: #e6b96b;
+  --cream: #faf7f0;
+  --white: #ffffff;
+  --ink: #24332d;
+  --muted: #68756e;
+  --line: #e5e9e3;
+  --red: #a74a3c;
+  --shadow: 0 12px 35px rgba(23,63,53,.08);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  margin: 0;
+  font-family: Tahoma, Arial, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.9;
+}
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; }
+img { max-width: 100%; }
+.container { width: min(1120px, 92%); margin: auto; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,247,240,.97);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand-icon {
+  width: 47px; height: 47px; border-radius: 15px;
+  display: grid; place-items: center;
+  background: var(--green); color: var(--gold);
+  font-size: 25px;
+}
+.brand-name { font-size: 21px; font-weight: 900; color: var(--green); }
+.brand-sub { display: block; font-size: 11px; color: var(--muted); }
+.nav-links { display: flex; align-items: center; gap: 17px; }
+.nav-links a { font-size: 13px; font-weight: bold; }
+.nav-links a:hover { color: var(--red); }
+.menu-btn {
+  display: none; background: var(--green); color: white;
+  border: 0; border-radius: 10px; padding: 8px 13px;
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--green);
+  color: white;
+  padding: 75px 0 65px;
+}
+.hero:before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 90% 10%, rgba(230,185,107,.16), transparent 35%),
+    linear-gradient(135deg, transparent 50%, rgba(255,255,255,.035) 50%);
+  pointer-events: none;
+}
+.hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 35px; align-items: center;
+}
+.eyebrow {
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid rgba(230,185,107,.5);
+  color: var(--gold);
+  border-radius: 30px;
+  font-size: 12px;
+}
+.hero h1 { font-size: clamp(32px, 5vw, 54px); line-height: 1.4; margin: 18px 0; }
+.hero h1 span { color: var(--gold); }
+.hero p { color: #e0eae4; max-width: 610px; font-size: 16px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px; border: 0; border-radius: 12px;
+  padding: 11px 19px; font-weight: bold;
+  transition: transform .2s, opacity .2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-gold { background: var(--gold); color: #26382f; }
+.btn-light { background: white; color: var(--green); }
+.btn-green { background: var(--green); color: white; }
+.btn-outline { border: 1px solid var(--line); color: var(--green); background: transparent; }
+.hero-card {
+  background: rgba(255,255,255,.075);
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 23px; padding: 25px;
+}
+.hero-card .mountain { font-size: 55px; text-align: center; margin-bottom: 5px; }
+.hero-card h3 { color: var(--gold); text-align: center; margin: 5px 0 12px; }
+.hero-card p { text-align: center; font-size: 14px; }
+.hero-points { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+.hero-point {
+  padding: 12px; text-align: center; border-radius: 12px;
+  background: rgba(255,255,255,.07); font-size: 13px;
+}
+section { padding: 66px 0; }
+.section-head { max-width: 700px; margin: 0 auto 30px; text-align: center; }
+.section-head .kicker { color: var(--red); font-size: 12px; font-weight: bold; }
+.section-head h2 { color: var(--green); font-size: clamp(25px, 4vw, 34px); margin: 5px 0 10px; }
+.section-head p { color: var(--muted); margin: 0; font-size: 14px; }
+.cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.card {
+  background: white; border: 1px solid var(--line);
+  border-radius: 18px; padding: 22px; box-shadow: var(--shadow);
+}
+.card-icon {
+  width: 48px; height: 48px; border-radius: 14px;
+  background: #edf3ed; display: grid; place-items: center; font-size: 24px;
+}
+.card h3 { color: var(--green); font-size: 18px; margin: 12px 0 6px; }
+.card p { color: var(--muted); font-size: 14px; margin: 0 0 14px; }
+.card-link { color: var(--red); font-size: 13px; font-weight: bold; }
+.soft { background: #f0f3ed; }
+.article-list { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.article-item {
+  display: flex; align-items: center; gap: 13px;
+  width: 100%; text-align: right; padding: 17px;
+  border: 1px solid var(--line); border-radius: 14px;
+  background: white; color: var(--ink);
+}
+.article-item:hover { border-color: var(--gold); transform: translateY(-1px); }
+.article-number {
+  flex: 0 0 42px; height: 42px; display: grid; place-items: center;
+  background: #edf3ed; color: var(--green); border-radius: 12px; font-weight: bold;
+}
+.article-item strong { display: block; color: var(--green); font-size: 14px; }
+.article-item small { color: var(--muted); font-size: 12px; }
+.article-view {
+  display: none; margin-top: 22px; padding: 25px;
+  border: 1px solid var(--line); background: white; border-radius: 18px;
+}
+.article-view.show { display: block; }
+.article-view h3 { color: var(--green); }
+.article-body { white-space: pre-line; }
+.article-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.poll-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.poll-card { background: white; border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+.poll-card h3 { margin-top: 0; color: var(--green); font-size: 17px; }
+.option {
+  display: flex; align-items: center; gap: 9px;
+  padding: 10px 12px; margin: 9px 0;
+  border: 1px solid var(--line); border-radius: 11px; cursor: pointer;
+}
+.option:has(input:checked) { border-color: var(--green); background: #f0f5ef; }
+.option input { accent-color: var(--green); }
+.poll-result { margin: 10px 0; font-size: 13px; }
+.bar { height: 8px; border-radius: 10px; background: #e9eee7; overflow: hidden; margin-top: 5px; }
+.bar span { display: block; height: 100%; background: var(--green2); width: 0; transition: width .3s; }
+.note { color: var(--muted); font-size: 12px; margin-top: 12px; }
+.form-section { background: var(--green); color: white; }
+.form-section .section-head h2 { color: white; }
+.form-section .section-head p { color: #d7e2dc; }
+.form-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 25px; align-items: start; }
+.form-info {
+  padding: 25px; border: 1px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.055); border-radius: 18px;
+}
+.form-info h3 { color: var(--gold); }
+.form-info li { margin: 10px 0; color: #e0e9e3; font-size: 14px; }
+.main-form {
+  padding: 25px; background: white; color: var(--ink);
+  border-radius: 18px; box-shadow: var(--shadow);
+}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-size: 13px; font-weight: bold; color: var(--green); }
+.field input, .field select, .field textarea {
+  width: 100%; min-width: 0; padding: 12px;
+  border: 1px solid #dce3dc; border-radius: 10px;
+  background: #fcfdfb; color: var(--ink); outline: none;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--green2); box-shadow: 0 0 0 3px rgba(36,88,73,.09);
+}
+.field textarea { min-height: 110px; resize: vertical; }
+.form-status { display: none; padding: 12px; border-radius: 10px; margin: 12px 0; font-size: 14px; }
+.form-status.show { display: block; }
+.form-status.success { background: #e8f6e9; color: #1b6331; }
+.form-status.error { background: #fff0ed; color: #923c30; }
+.community-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.community-box { background: white; border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+.community-box h3 { color: var(--green); margin-top: 0; }
+footer { background: #102e27; color: white; padding: 35px 0 20px; }
+.footer-top { display: flex; justify-content: space-between; gap: 25px; flex-wrap: wrap; }
+footer p, footer a { color: #d0ddd5; font-size: 13px; }
+.footer-links { display: flex; gap: 15px; flex-wrap: wrap; }
+.copyright { text-align: center; border-top: 1px solid #315046; margin-top: 25px; padding-top: 15px; font-size: 12px; color: #b8c8be; }
+.toast {
+  position: fixed; bottom: 20px; right: 50%; transform: translateX(50%);
+  z-index: 200; width: max-content; max-width: 90%;
+  background: #173f35; color: white; padding: 12px 18px;
+  border-radius: 12px; box-shadow: var(--shadow); display: none; font-size: 14px;
+}
+.toast.show { display: block; }
+.back-top {
+  position: fixed; left: 17px; bottom: 18px; z-index: 80;
+  width: 44px; height: 44px; border: 0; border-radius: 50%;
+  background: var(--gold); color: var(--green); font-size: 22px;
+  box-shadow: var(--shadow); display: none;
+}
+.back-top.show { display: block; }
+@media (max-width: 850px) {
+  .nav-links {
+    display: none; position: absolute; top: 76px; right: 0; left: 0;
+    padding: 18px 5%; background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column; align-items: stretch; gap: 0;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 10px 0; }
+  .menu-btn { display: block; }
+  .hero-grid, .form-layout { grid-template-columns: 1fr; }
+  .hero-card { max-width: 540px; }
+  .cards { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  section { padding: 48px 0; }
+  .hero { padding: 48px 0; }
+  .hero h1 { font-size: 32px; }
+  .cards, .article-list, .poll-grid, .community-grid, .form-grid { grid-template-columns: 1fr; }
+  .field.full { grid-column: auto; }
+  .card, .main-form, .form-info, .poll-card { padding: 18px; }
+  .brand-name { font-size: 18px; }
+  .hero-points { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="صوت الجبل - الصفحة الرئيسية">
+      <span class="brand-icon">⛰</span>
+      <span>
+        <span class="brand-name">صوت الجبل</span>
+        <span class="brand-sub">الحوار • الكرامة • المشاركة</span>
+      </span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-label="فتح القائمة">☰ القائمة</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">الرئيسية</a>
+      <a href="#about">من نحن</a>
+      <a href="#issues">قضايا الجبل</a>
+      <a href="#articles">المقالات</a>
+      <a href="#polls">صوتك مهم</a>
+      <a href="#join">انضم إلينا</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">فضاء للحوار والمشاركة الشبابية</span>
+      <h1>من الجبل نرفع <span>الصوت</span>، وبالحوار نصنع الأمل.</h1>
+      <p>
+        نحن شباب وشابات نهتم بالحوار والتفاعل وتبادل الأفكار،
+        ونؤمن بأن قضايا المناطق الجبلية والقروية تستحق أن تُناقَش
+        بجدية، وأن تتحول أصوات المواطنين إلى مبادرات واقعية.
+        هنا يمكنك التعبير عن رأيك، ومشاركة تجربتك، والمساهمة في بناء أفكار جديدة.
+      </p>
+      <div class="hero-actions">
+        <a href="#join" class="btn btn-gold">✦ شارك معنا</a>
+        <a href="#articles" class="btn btn-light">اكتشف المقالات ←</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="mountain">🏔️</div>
+      <h3>الجبل ليس هامشاً</h3>
+      <p>
+        وراء كل طريق وعِر حكاية، ووراء كل قرية بعيدة أحلام شباب وشابات
+        يستحقون الفرصة والتعليم والصحة والكرامة.
+      </p>
+      <div class="hero-points">
+        <div class="hero-point">💬 حوار هادف</div>
+        <div class="hero-point">📝 أفكار ومقالات</div>
+        <div class="hero-point">🤝 مبادرات مشتركة</div>
+        <div class="hero-point">📣 قضايا مجتمعية</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">من نحن؟</span>
+      <h2>مساحة تجمع الأصوات ولا تقصي أحداً</h2>
+      <p>فضاء مفتوح للشباب والشابات والجمعيات والفاعلين وكل من يريد أن يساهم بفكرة أو تجربة أو مبادرة مفيدة.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">🗣️</div>
+        <h3>نتحاور باحترام</h3>
+        <p>نختلف في الآراء، لكننا نلتقي حول أهمية الحوار والاستماع إلى تجارب المواطنين ومقترحاتهم.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🌱</div>
+        <h3>نبحث عن الحلول</h3>
+        <p>لا نكتفي بوصف المشاكل؛ نحاول جمع الأفكار العملية التي يمكن أن تتحول إلى مبادرات على أرض الواقع.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🤝</div>
+        <h3>نفتح باب المشاركة</h3>
+        <p>سواء كنت طالباً أو طالبة، أو عضواً في جمعية، أو مواطناً لديه تجربة، فمساهمتك مرحب بها.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="issues">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">واقعنا وأسئلتنا</span>
+      <h2>قضايا الجبل تستحق النقاش</h2>
+      <p>نطرح أسئلة من واقع الحياة اليومية، لأن فهم المشكلة خطوة أولى نحو البحث عن الحل.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">🏫</div>
+        <h3>التعليم والنقل المدرسي</h3>
+        <p>كيف يمكن ضمان تعليم جيد للأطفال في القرى البعيدة؟ وما دور النقل المدرسي والأسر والجمعيات والجماعات المحلية؟</p>
+        <a class="card-link" href="#polls">عبّر عن رأيك ←</a>
+      </article>
+      <article class="card">
+        <div class="card-icon">🏥</div>
+        <h3>الصحة والطرق والإسعاف</h3>
+        <p>كيف يعيش المواطن عندما تكون أقرب الخدمات الصحية بعيدة، ويصبح الوصول إليها تحدياً يومياً؟</p>
+        <a class="card-link" href="#join">شارك تجربتك ←</a>
+      </article>
+      <article class="card">
+        <div class="card-icon">🌨️</div>
+        <h3>العزلة والفقر والفرص</h3>
+        <p>كيف يمكن للشباب في المناطق الجبلية أن يحصلوا على فرص أفضل في التكوين والعمل والمشاركة في الحياة العامة؟</p>
+        <a class="card-link" href="#articles">اقرأ المقالات ←</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="articles">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">فكر، اقرأ، ناقش</span>
+      <h2>المقالات والأفكار</h2>
+      <p>اختَر عنواناً من القائمة لقراءة المقال. يمكنك مشاركة المقال أو نسخ رابطه.</p>
+    </div>
+
+    <div class="article-list" id="articleList"></div>
+
+    <div class="article-view" id="articleView" aria-live="polite">
+      <button class="btn btn-outline" id="closeArticle" type="button">إغلاق المقال ✕</button>
+      <div id="articleContent"></div>
+      <div class="article-actions">
+        <button class="btn btn-green" id="shareArticle" type="button">↗ مشاركة المقال</button>
+        <button class="btn btn-outline" id="copyArticle" type="button">نسخ رابط المقال</button>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:25px">
+      <a href="#join" class="btn btn-green">هل تريد نشر مقالك؟ شاركنا كتابتك ←</a>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="polls">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">صوتك مهم</span>
+      <h2>أسئلة من واقعنا</h2>
+      <p>اختَر الجواب الذي يعبر عن رأيك واضغط على التصويت. ستظهر لك النتائج بعد المشاركة.</p>
+    </div>
+
+    <div class="poll-grid" id="pollContainer"></div>
+    <p class="note" style="text-align:center">
+      ملاحظة: هذه تصويتات تجريبية تعمل على المتصفح. النتائج المحفوظة محلياً ليست إحصاءات رسمية، وقد تختلف بين الأجهزة والمتصفحات.
+    </p>
+  </div>
+</section>
+
+<section id="activities">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">من الفكرة إلى الفعل</span>
+      <h2>ما الأنشطة التي يمكننا تنظيمها؟</h2>
+      <p>نطمح إلى فتح المجال للقاءات والحوارات والندوات وتبادل التجارب، بحسب إمكانيات المشاركين وتوفر الظروف المناسبة.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">🎙️</div>
+        <h3>لقاءات حوارية</h3>
+        <p>لقاءات يناقش فيها الشباب قضايا التعليم والتنمية والفرص المتاحة في المناطق الجبلية.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">📚</div>
+        <h3>ندوات وموائد مستديرة</h3>
+        <p>نقاشات تجمع الطلبة والفاعلين الجمعويين والمواطنين لتبادل وجهات النظر والتجارب.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">📝</div>
+        <h3>مقالات وشهادات</h3>
+        <p>إتاحة المجال لكتابة التجارب الشخصية والآراء والمقترحات حول قضايا المجتمع.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="join">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">مكانك بيننا</span>
+      <h2>هل تريد الانضمام إلينا؟</h2>
+      <p>املأ الاستمارة وأخبرنا كيف تريد المشاركة. لا تحتاج إلى أن تكون خبيراً أو عضواً في جمعية حتى تعبّر عن رغبتك.</p>
+    </div>
+
+    <div class="form-layout">
+      <aside class="form-info">
+        <h3>كل مشاركة تبدأ بخطوة</h3>
+        <p>يمكنك المشاركة حسب وقتك واهتماماتك.</p>
+        <ul>
+          <li>المساهمة في الحوارات واللقاءات.</li>
+          <li>اقتراح موضوع لندوة أو نشاط.</li>
+          <li>كتابة مقال أو مشاركة تجربة.</li>
+          <li>التعاون مع شباب وشابات من مناطق مختلفة.</li>
+          <li>المساهمة في مبادرات مدنية هادفة.</li>
+        </ul>
+        <p style="font-size:13px;color:#d7e2dc">
+          إرسال الطلب لا يعني التسجيل في نشاط مؤكد؛ سنتواصل معك إذا توفرت وسيلة التواصل المناسبة وتم تنظيم نشاط ملائم.
+        </p>
+      </aside>
+
+      <form class="main-form" id="joinForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="fullName">الاسم الكامل *</label>
+            <input id="fullName" name="الاسم" type="text" autocomplete="name" required maxlength="100" placeholder="اكتب اسمك">
+          </div>
+
+          <div class="field">
+            <label for="region">المنطقة أو الجماعة *</label>
+            <input id="region" name="المنطقة" type="text" required maxlength="120" placeholder="مثلاً: أزيلال، دمنات...">
+          </div>
+
+          <div class="field">
+            <label for="contactType">وسيلة التواصل *</label>
+            <select id="contactType" name="نوع وسيلة التواصل" required>
+              <option value="">اختر الوسيلة</option>
+              <option value="WhatsApp">واتساب</option>
+              <option value="Phone">رقم الهاتف</option>
+              <option value="Email">البريد الإلكتروني</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="contactValue">رقم الهاتف أو البريد *</label>
+            <input id="contactValue" name="وسيلة التواصل" type="text" required maxlength="150" placeholder="أدخل وسيلة التواصل">
+          </div>
+
+          <div class="field">
+            <label for="participationType">نوع المشاركة *</label>
+            <select id="participationType" name="نوع المشاركة" required>
+              <option value="">ماذا تريد أن تفعل؟</option>
+              <option>حضور اللقاءات والندوات</option>
+              <option>المساهمة في التنظيم والتنشيط</option>
+              <option>كتابة المقالات</option>
+              <option>مشاركة تجربة أو شهادة</option>
+              <option>اقتراح مبادرة أو موضوع</option>
+              <option>التعاون مع جمعية أو مجموعة شبابية</option>
+              <option>المساعدة عن بُعد</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="availableTime">الفترة المناسبة لك</label>
+            <select id="availableTime" name="الفترة المناسبة">
+              <option value="">اختر الفترة (اختياري)</option>
+              <option>العطل الأسبوعية</option>
+              <option>العطلة البينية</option>
+              <option>عطلة عيد الفطر</option>
+              <option>عطلة عيد الأضحى</option>
+              <option>العطلة الصيفية</option>
+              <option>حسب الظروف والإعلان عن النشاط</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="message">رسالة أو فكرة تريد مشاركتها (اختياري)</label>
+            <textarea id="message" name="رسالة أو فكرة" maxlength="2000" placeholder="اكتب فكرتك أو الموضوع الذي يهمك..."></textarea>
+          </div>
+        </div>
+
+        <button class="btn btn-green" type="submit" id="submitBtn" style="width:100%">إرسال طلبي ←</button>
+        <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+        <p class="note">استعمل وسيلة تواصل صحيحة إذا كنت ترغب في تلقي رد. لا تشارك معلومات حساسة لا تحتاجها المشاركة.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="contribute">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">مساحة مفتوحة</span>
+      <h2>ساهم بفكرة أو تجربة</h2>
+      <p>قد تكون تجربتك مصدر إلهام لشخص آخر، وقد تكون فكرتك بداية مبادرة مفيدة.</p>
+    </div>
+
+    <div class="community-grid">
+      <div class="community-box">
+        <h3>🖊️ هل لديك مقال؟</h3>
+        <p>اكتب عن قضية تهمك، أو تجربة عشتها، أو حل تقترحه. يمكنك إرسال عنوان المقال وفكرته عبر الاستمارة.</p>
+        <button class="btn btn-green" type="button" id="articleIdeaBtn">اقترح مقالاً</button>
+      </div>
+      <div class="community-box">
+        <h3>💬 هل لديك تجربة؟</h3>
+        <p>شاركنا تجربة مرتبطة بالتعليم أو الصحة أو النقل أو الحياة اليومية في الجبال. اختر نوع المشاركة واكتب ملخصها في الاستمارة.</p>
+        <button class="btn btn-outline" type="button" id="experienceBtn">شارك تجربتك</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="brand">
+          <span class="brand-icon">⛰</span>
+          <span>
+            <span class="brand-name" style="color:white">صوت الجبل</span>
+            <span class="brand-sub" style="color:#c8d8ce">فضاء الحوار والمشاركة</span>
+          </span>
+        </div>
+        <p>نؤمن بأن لكل مواطن صوتاً، ولكل فكرة فرصة للنقاش.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">من نحن</a>
+        <a href="#articles">المقالات</a>
+        <a href="#polls">التصويت</a>
+        <a href="#join">انضم إلينا</a>
+      </div>
+    </div>
+    <div class="copyright">
+      صوت الجبل © <span id="year"></span> — فضاء للحوار والمشاركة المجتمعية
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<button class="back-top" id="backTop" aria-label="العودة إلى أعلى الصفحة" title="إلى الأعلى">↑</button>
+
+<script>
+"use strict";
+
+/* ==========================================
+   1. أدوات عامة
+========================================== */
+const $ = (selector) => document.querySelector(selector);
+
+const toast = (message) => {
+  const box = $("#toast");
+  box.textContent = message;
+  box.classList.add("show");
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(() => box.classList.remove("show"), 3000);
+};
+
+$("#year").textContent = new Date().getFullYear();
+
+/* ==========================================
+   2. قائمة الهاتف
+========================================== */
+const menuBtn = $("#menuBtn");
+const navLinks = $("#navLinks");
+
+menuBtn.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(isOpen));
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+  });
+});
+
+const backTop = $("#backTop");
+window.addEventListener("scroll", () => {
+  backTop.classList.toggle("show", window.scrollY > 450);
+});
+backTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+/* ==========================================
+   3. المقالات
+   أضف مقالات جديدة إلى المصفوفة أدناه
+========================================== */
+const articles = [
+  {
+    id: "education",
+    title: "التعليم في الجبال: حق لا ينبغي أن تحدده الجغرافيا",
+    category: "التعليم والعدالة المجالية",
+    body: `ليس من العدل أن تتحدد فرص الطفل في التعليم بحسب المسافة التي تفصله عن المدرسة أو بحسب الطريق التي يسلكها كل صباح.
+
+في بعض المناطق الجبلية، لا تمثل المدرسة مجرد مؤسسة تعليمية قريبة، بل قد تكون رحلة يومية تتطلب وقتاً وجهداً ومصاريف إضافية، وتزداد صعوبتها عندما يكون الطقس قاسياً أو تكون الطرق غير مهيأة.
+
+إن معالجة هذه المشكلة تحتاج إلى تشخيص واقعي لظروف التلاميذ والأسر، وتحسين البنية التحتية والنقل المدرسي، وتوفير ظروف تعليمية تحفظ كرامة المتعلم وتساعده على الاستمرار في الدراسة.
+
+التعليم ليس امتيازاً جغرافياً، بل حق ينبغي أن تتاح فرصه للجميع.
+
+السؤال الذي يستحق النقاش: ما الأولويات التي يمكن أن تجعل المدرسة أقرب إلى أطفال القرى الجبلية؟`
+  },
+  {
+    id: "youth",
+    title: "الشباب الجبلي: من التعبير عن المعاناة إلى صناعة المبادرة",
+    category: "الشباب والمشاركة",
+    body: `يمتلك الشباب في المناطق الجبلية تجارب ومعارف مرتبطة بواقعهم اليومي. وهم الأقدر على وصف تفاصيل كثيرة لا تظهر دائماً في التقارير العامة.
+
+لكن التعبير عن المعاناة، مهما كانت أهميته، لا يكفي وحده لإحداث التغيير. فالخطوة التالية هي تنظيم الحوار، وجمع المعطيات، وتحديد الأولويات، والبحث عن الجهات التي يمكن مخاطبتها، والعمل الجماعي على مبادرات قابلة للتنفيذ.
+
+ليس المطلوب من الشباب أن يحملوا وحدهم مسؤولية حل كل المشكلات، وإنما أن تكون لهم مساحة حقيقية للمشاركة في النقاش العمومي وصناعة المقترحات.
+
+قد تبدأ المبادرة بلقاء صغير، أو تقرير عن مشكلة محلية، أو حوار يجمع شباباً من دواوير مختلفة.
+
+السؤال: ما المبادرة الواقعية التي يمكن أن يبدأ بها شباب منطقتك؟`
+  },
+  {
+    id: "health",
+    title: "حين تصبح المسافة عائقاً أمام العلاج",
+    category: "الصحة والكرامة",
+    body: `تُقاس جودة الخدمات الصحية بقدرة المواطن على الوصول إليها والاستفادة منها في الوقت المناسب، وليس بمجرد وجود مؤسسة صحية على الخريطة.
+
+عندما تكون المسافة طويلة، أو تكون وسائل النقل محدودة، أو يصعب الوصول إلى الخدمات في فصل الشتاء، فإن المريض وأسرته يواجهان أعباء إضافية.
+
+لذلك ينبغي أن ينطلق النقاش من الوقائع المحلية: كم تستغرق الرحلة؟ ما وسائل النقل المتاحة؟ ما الخدمات الموجودة؟ وما الحاجات التي تتكرر لدى السكان؟
+
+إن توثيق هذه التفاصيل، والاستماع إلى شهادات المواطنين، والتواصل المسؤول مع المؤسسات المعنية، يمكن أن يساعد على بناء مطالب واضحة وقابلة للمتابعة.
+
+الصحة حق أساسي، والوصول إلى العلاج جزء من هذا الحق.`
+  },
+  {
+    id: "dialogue",
+    title: "هل تكفي المنشورات وحدها لإحداث التغيير؟",
+    category: "الحوار والعمل المدني",
+    body: `تمنح وسائل التواصل الاجتماعي للأفراد فرصة التعبير عن آرائهم، والتعريف بالمشكلات، والوصول إلى أشخاص قد يتقاسمون الاهتمامات نفسها.
+
+لكن انتشار المنشور لا يعني بالضرورة أن المشكلة عولجت، وكثرة التعليقات لا تعني دائماً أن مبادرة قد انطلقت.
+
+يمكن أن تكون الكتابة بداية مهمة إذا تبعتها خطوات أخرى: التحقق من المعلومات، والاستماع إلى المتضررين، وتنظيم لقاء، وإعداد مقترح، والتواصل مع الجهات المعنية، ثم متابعة ما تحقق وما لم يتحقق.
+
+ليس المطلوب إلغاء التعبير الرقمي، بل ربطه بالعمل الواقعي حيثما أمكن.
+
+فالسؤال ليس فقط: كم شخصاً شاهد المنشور؟ بل أيضاً: ما المعرفة التي أضافها، وما الحوار الذي فتحه، وما الخطوة التي ساعد على إطلاقها؟`
+  },
+  {
+    id: "environment",
+    title: "البيئة الجبلية والتنمية: كيف نحمي المكان ونحسن الحياة؟",
+    category: "البيئة والتنمية",
+    body: `تمثل الجبال مجالاً طبيعياً واجتماعياً يعيش فيه السكان ويعتمدون على موارده في حياتهم اليومية.
+
+وتتطلب التنمية المحلية التفكير في حاجات السكان الأساسية، وفي الوقت نفسه المحافظة على الماء والتربة والغابات والتوازن البيئي.
+
+يمكن أن يشمل النقاش تدبير النفايات، وحماية الموارد المائية، وصيانة المسالك، وتشجيع الأنشطة الاقتصادية الملائمة للمنطقة، والاستماع إلى خبرة السكان المحليين.
+
+ولا ينبغي اختزال التنمية في مشروع واحد أو حل موحد لكل القرى، لأن حاجات المناطق تختلف بحسب طبيعتها وظروفها.
+
+التنمية الجيدة هي التي تحسن حياة السكان وتحترم المجال الذي يعيشون فيه.`
+  },
+  {
+    id: "participation",
+    title: "لماذا نحتاج إلى فضاءات للحوار بين شباب المناطق المختلفة؟",
+    category: "التعاون والتواصل",
+    body: `قد يعيش شباب مناطق مختلفة مشكلات متشابهة، لكنهم لا يجدون دائماً فرصة لتبادل التجارب أو التعرف على المبادرات التي نجحت في أماكن أخرى.
+
+إن اللقاءات والندوات والحوارات المنظمة يمكن أن تساعد على بناء علاقات جديدة، ومقارنة التجارب، وتطوير أفكار مشتركة.
+
+ولا يشترط أن يبدأ الأمر بمؤتمر كبير؛ فقد يكون لقاء محدوداً يجمع عدداً من الشباب حول موضوع محدد، مع احترام اختلاف الآراء وتوثيق المقترحات التي يخرج بها النقاش.
+
+نجاح هذه الفضاءات لا يقاس بعدد الحاضرين فقط، بل بقدرتها على خلق حوار جاد وفتح فرص للتعاون.
+
+فما الموضوع الذي يستحق أن يكون محور أول لقاء شبابي؟`
+  }
+];
+
+const articleList = $("#articleList");
+const articleView = $("#articleView");
+const articleContent = $("#articleContent");
+let currentArticle = null;
+
+articles.forEach((article, index) => {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "article-item";
+  button.innerHTML = `
+    <span class="article-number">${String(index + 1).padStart(2, "0")}</span>
+    <span>
+      <strong>${article.title}</strong>
+      <small>${article.category} · اضغط لقراءة المقال</small>
+    </span>`;
+  button.addEventListener("click", () => openArticle(article));
+  articleList.appendChild(button);
+});
+
+function openArticle(article) {
+  currentArticle = article;
+  articleContent.replaceChildren();
+
+  const category = document.createElement("p");
+  category.className = "card-link";
+  category.textContent = article.category;
+
+  const heading = document.createElement("h3");
+  heading.textContent = article.title;
+
+  const body = document.createElement("div");
+  body.className = "article-body";
+  body.textContent = article.body;
+
+  articleContent.append(category, heading, body);
+  articleView.classList.add("show");
+  articleView.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+$("#closeArticle").addEventListener("click", () => {
+  articleView.classList.remove("show");
+});
+
+$("#shareArticle").addEventListener("click", async () => {
+  if (!currentArticle) return;
+  const shareData = {
+    title: currentArticle.title,
+    text: currentArticle.title + " — من موقع صوت الجبل",
+    url: location.href.split("#")[0] + "#articles"
+  };
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+    } else if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(shareData.text + "\n" + shareData.url);
+      toast("تم نسخ نص المقال ورابط الموقع");
+    } else {
+      window.prompt("انسخ النص التالي وشاركه:", shareData.text + "\n" + shareData.url);
+    }
+  } catch (error) {
+    if (error.name !== "AbortError") toast("تعذرت المشاركة. يمكنك نسخ الرابط.");
+  }
+});
+
+$("#copyArticle").addEventListener("click", async () => {
+  const url = location.href.split("#")[0] + "#articles";
+  try {
+    await navigator.clipboard.writeText(url);
+    toast("تم نسخ رابط قسم المقالات");
+  } catch {
+    window.prompt("انسخ الرابط يدوياً:", url);
+  }
+});
+
+/* ==========================================
+   4. التصويتات
+   تحفظ الأصوات في المتصفح نفسه فقط.
+========================================== */
+const polls = [
+  {
+    id: "priority",
+    question: "ما الأولوية الأكثر إلحاحاً في المناطق الجبلية؟",
+    options: [
+      "تحسين التعليم والنقل المدرسي",
+      "تقريب الخدمات الصحية",
+      "الطرق والمواصلات",
+      "فرص العمل والتكوين"
+    ]
+  },
+  {
+    id: "youth",
+    question: "ما النشاط الذي ترغب في المشاركة فيه؟",
+    options: [
+      "لقاءات وندوات حضورية",
+      "حوارات شبابية محلية",
+      "كتابة مقالات وشهادات",
+      "مبادرات تطوعية وجمعوية"
+    ]
+  },
+  {
+    id: "dialogue",
+    question: "ما الخطوة التي تساعد على نقل قضايا الجبل إلى المسؤولين؟",
+    options: [
+      "لقاءات مباشرة وحوار منظم",
+      "تقارير موثقة عن المشاكل",
+      "مقترحات مكتوبة ومتابعتها",
+      "تعاون الجمعيات والشباب والسكان"
+    ]
+  },
+  {
+    id: "meeting",
+    question: "أي فترة قد تناسبك لحضور لقاء شبابي؟",
+    options: [
+      "العطل الأسبوعية",
+      "العطلة البينية",
+      "عطلة عيد الفطر أو عيد الأضحى",
+      "العطلة الصيفية"
+    ]
+  }
+];
+
+function readStorage(key, fallback) {
+  try {
+    const value = localStorage.getItem(key);
+    return value ? JSON.parse(value) : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function renderPolls() {
+  const container = $("#pollContainer");
+  container.replaceChildren();
+
+  polls.forEach(poll => {
+    const votes = readStorage("sawt-votes-" + poll.id, poll.options.map(() => 0));
+    const selected = readStorage("sawt-selected-" + poll.id, null);
+
+    const card = document.createElement("div");
+    card.className = "poll-card";
+
+    const heading = document.createElement("h3");
+    heading.textContent = "❓ " + poll.question;
+    card.appendChild(heading);
+
+    const form = document.createElement("form");
+    form.dataset.poll = poll.id;
+
+    poll.options.forEach((option, index) => {
+      const label = document.createElement("label");
+      label.className = "option";
+
+      const radio = document.createElement("input");
+      radio.type = "radio";
+      radio.name = "choice-" + poll.id;
+      radio.value = String(index);
+      radio.checked = selected === index;
+
+      const text = document.createElement("span");
+      text.textContent = option;
+
+      label.append(radio, text);
+      form.appendChild(label);
+    });
+
+    const submit = document.createElement("button");
+    submit.type = "submit";
+    submit.className = "btn btn-green";
+    submit.textContent = selected === null ? "صوّت الآن" : "تغيير التصويت";
+    form.appendChild(submit);
+
+    const results = document.createElement("div");
+    results.className = "poll-results";
+
+    const total = votes.reduce((sum, count) => sum + count, 0);
+    if (selected !== null) {
+      const resultTitle = document.createElement("p");
+      resultTitle.className = "note";
+      resultTitle.textContent = "النتائج على هذا المتصفح (" + total + " صوتاً)";
+      results.appendChild(resultTitle);
+
+      poll.options.forEach((option, index) => {
+        const percent = total ? Math.round((votes[index] / total) * 100) : 0;
+        const line = document.createElement("div");
+        line.className = "poll-result";
+
+        const label = document.createElement("div");
+        label.textContent = option + " — " + percent + "% (" + votes[index] + ")";
+
+        const bar = document.createElement("div");
+        bar.className = "bar";
+        const fill = document.createElement("span");
+        fill.style.width = percent + "%";
+        bar.appendChild(fill);
+
+        line.append(label, bar);
+        results.appendChild(line);
+      });
+    }
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      const chosen = form.querySelector('input[type="radio"]:checked');
+
+      if (!chosen) {
+        toast("اختَر جواباً قبل التصويت");
+        return;
+      }
+
+      const newIndex = Number(chosen.value);
+      const previous = readStorage("sawt-selected-" + poll.id, null);
+      const currentVotes = readStorage(
+        "sawt-votes-" + poll.id,
+        poll.options.map(() => 0)
+      );
+
+      if (previous !== null && previous !== newIndex) {
+        currentVotes[previous] = Math.max(0, currentVotes[previous] - 1);
+      }
+
+      if (previous !== newIndex) {
+        currentVotes[newIndex] += 1;
+      }
+
+      try {
+        localStorage.setItem("sawt-votes-" + poll.id, JSON.stringify(currentVotes));
+        localStorage.setItem("sawt-selected-" + poll.id, JSON.stringify(newIndex));
+      } catch {
+        toast("تعذر حفظ التصويت في هذا المتصفح");
+        return;
+      }
+
+      toast("تم تسجيل اختيارك في هذا المتصفح");
+      renderPolls();
+    });
+
+    card.append(form, results);
+    container.appendChild(card);
+  });
+}
+
+renderPolls();
+
+/* ==========================================
+   5. استمارة المشاركة
+   تستعمل FormSubmit لإرسال الطلبات إلى البريد.
+   يجب تفعيل البريد أول مرة قبل استقبال الطلبات.
+========================================== */
+const FORM_EMAIL = "ridouanelllersi@gmail.com";
+const joinForm = $("#joinForm");
+const formStatus = $("#formStatus");
+const submitBtn = $("#submitBtn");
+
+function showFormStatus(message, type) {
+  formStatus.textContent = message;
+  formStatus.className = "form-status show " + type;
+}
+
+joinForm.addEventListener("submit", async event => {
+  event.preventDefault();
+
+  if (!joinForm.reportValidity()) return;
+
+  const contactType = $("#contactType").value;
+  const contactValue = $("#contactValue").value.trim();
+
+  if (contactType === "Email" &&
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue)) {
+    showFormStatus("يرجى إدخال بريد إلكتروني صحيح.", "error");
+    return;
+  }
+
+  if ((contactType === "WhatsApp" || contactType === "Phone") &&
+      contactValue.length < 6) {
+    showFormStatus("يرجى التأكد من رقم الهاتف.", "error");
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "جارٍ إرسال الطلب...";
+  formStatus.className = "form-status";
+
+  const data = new FormData(joinForm);
+  data.append("_subject", "طلب مشاركة جديد — موقع صوت الجبل");
+  data.append("_template", "table");
+  data.append("_captcha", "false");
+
+  try {
+    const response = await fetch(
+      "https://formsubmit.co/ajax/" + encodeURIComponent(FORM_EMAIL),
+      {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: data
+      }
+    );
+
+    let result = {};
+    try { result = await response.json(); } catch {}
+
+    if (response.ok && result.success) {
+      showFormStatus(
+        "تم إرسال طلبك بنجاح. شكراً لاهتمامك بصوت الجبل! إذا كانت هذه أول مرة، تحقق من بريد الاستقبال لتفعيل الخدمة.",
+        "success"
+      );
+      joinForm.reset();
+    } else {
+      showFormStatus(
+        "لم نتمكن من تأكيد إرسال الطلب. تحقق من اتصال الإنترنت ومن تفعيل خدمة استقبال البريد، ثم حاول مجدداً.",
+        "error"
+      );
+    }
+  } catch (error) {
+    showFormStatus(
+      "تعذر الاتصال بخدمة إرسال الطلبات. تحقق من الإنترنت وحاول مرة أخرى.",
+      "error"
+    );
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "إرسال طلبي ←";
+  }
+});
+
+/* ==========================================
+   6. أزرار اقتراح مقال أو مشاركة تجربة
+========================================== */
+$("#articleIdeaBtn").addEventListener("click", () => {
+  $("#participationType").value = "كتابة المقالات";
+  $("#message").value = "عنوان المقال المقترح:\n\nفكرة المقال:\n";
+  $("#join").scrollIntoView({ behavior: "smooth" });
+  setTimeout(() => $("#message").focus(), 450);
+});
+
+$("#experienceBtn").addEventListener("click", () => {
+  $("#participationType").value = "مشاركة تجربة أو شهادة";
+  $("#message").value = "موضوع التجربة:\n\nالمنطقة المعنية:\n\nملخص التجربة:\n";
+  $("#join").scrollIntoView({ behavior: "smooth" });
+  setTimeout(() => $("#message").focus(), 450);
+});
+</script>
+</body>
+</html>
